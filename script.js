@@ -44,7 +44,12 @@ for (let i = 0; i < numStars; i++) {
 }
 
 const clickedCounter = document.querySelector('.stars-clicked-counter');
-const STARWIDTH = 20;
+const basicInfo = document.querySelector('.basic-info');
+const coursesTaken = document.querySelector('.courses-taken');
+const interests = document.querySelector('.interests');
+const funFacts = document.querySelector('.fun-facts');
+
+const STARWIDTH = 30;
 function animate() {
   // update the positions for each star
   for (let i = 0; i < numStars; i++) {
@@ -79,6 +84,16 @@ function animate() {
 
   // update the stars clicked counter
   clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
+
+  if (curStarsClicked == 2) {
+    basicInfo.textContent = "Basic info: Hi my name is Jack"
+  } else if (curStarsClicked == 4) {
+    coursesTaken.textContent = "Review of taken courses: COMP1511 COMP1531"
+  } else if (curStarsClicked == 6) {
+    interests.textContent = "My interests: Badminton"
+  } else if (curStarsClicked == 8) {
+    funFacts.textContent = "Fun facts: Random fact"
+  }
 
   requestAnimationFrame(animate);
 }
