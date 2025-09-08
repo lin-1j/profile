@@ -1,6 +1,6 @@
 const starGrid = document.querySelector('.star-grid');
 const numStars = 10;
-const curStarsClicked = 0;
+let curStarsClicked = 0;
 // This will store info about each star like what
 // its current position is
 const starsInfo = [];
@@ -43,6 +43,7 @@ for (let i = 0; i < numStars; i++) {
   };
 }
 
+const clickedCounter = document.querySelector('.stars-clicked-counter');
 const STARWIDTH = 20;
 function animate() {
   // update the positions for each star
@@ -53,6 +54,8 @@ function animate() {
     starObj.y = starObj.y + starObj.dy;
 
     // check if the star will go out of bounds
+    // if it does then flip the direction and put it
+    // back in bounds
     if (starObj.x <= 0) {
       starObj.x = 0;
       starObj.dx = starObj.dx * -1;
@@ -73,6 +76,9 @@ function animate() {
     starObj.star.style.left = starObj.x + 'px';
     starObj.star.style.top = starObj.y + 'px';
   }
+
+  // update the stars clicked counter
+  clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
 
   requestAnimationFrame(animate);
 }

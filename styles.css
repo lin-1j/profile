@@ -38,7 +38,7 @@ body {
   width: 400px;
   display: flex;
   justify-content: center;
-  margin: 50px auto;
+  margin: 0px auto;
   position: relative;
 }
 
@@ -47,4 +47,13 @@ body {
   height: 20px;
   background: white;
   position: absolute;
+}
+
+.star.clicked {
+  background: yellow;
+}
+
+.stars-clicked-counter {
+  display: flex;
+  margin: 50px auto;
 }
