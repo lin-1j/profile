@@ -15,12 +15,12 @@ for (let i = 0; i < numStars; i++) {
   let x = Math.random() * GRIDWIDTH;
   let y = Math.random() * GRIDWIDTH;
   // give each star a random speed
-  let dx = Math.random() + 1;
+  let dx = Math.random() * 3 + 1;
   if (Math.random () < 0.5) {
     dx = -dx;
   }
 
-  let dy = Math.random() + 1;
+  let dy = Math.random() * 3 + 1;
   if (Math.random () < 0.5) {
     dy = -dy;
   }
@@ -43,6 +43,7 @@ for (let i = 0; i < numStars; i++) {
   };
 }
 
+const STARWIDTH = 20;
 function animate() {
   // update the positions for each star
   for (let i = 0; i < numStars; i++) {
@@ -53,14 +54,18 @@ function animate() {
 
     // check if the star will go out of bounds
     if (starObj.x <= 0) {
+      starObj.x = 0;
       starObj.dx = starObj.dx * -1;
-    } else if (starObj.x >= GRIDWIDTH) {
+    } else if (starObj.x >= GRIDWIDTH - STARWIDTH) {
+      starObj.x = GRIDWIDTH - STARWIDTH;
       starObj.dx = starObj.dx * -1;
     }
 
     if (starObj.y <= 0) {
+      starObj.y = 0
       starObj.dy = starObj.dy * -1;
-    } else if (starObj.y >= GRIDWIDTH) {
+    } else if (starObj.y >= GRIDWIDTH - STARWIDTH) {
+      starObj.y = GRIDWIDTH - STARWIDTH;
       starObj.dy = starObj.dy * -1;
     }
 
