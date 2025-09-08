@@ -19,7 +19,7 @@ body {
   padding: 30px;
 }
 
-.info {
+.instructions {
   padding: 30px 200px;
   display: flex;
   flex-direction: column;
