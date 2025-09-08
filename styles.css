@@ -19,9 +19,32 @@ body {
   padding: 30px;
 }
 
-.section-one {
+.info {
   padding: 30px 200px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.star-grid {
+  background-color: rgb(23, 84, 134);
+  height: 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  position: relative;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  background: white;
+  position: absolute;
 }
