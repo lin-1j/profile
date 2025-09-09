@@ -5,7 +5,8 @@ let curStarsClicked = 0;
 // its current position is
 const starsInfo = [];
 
-const GRIDWIDTH = 400;
+const GRIDWIDTH = 1000;
+const GRIDHEIGHT = 400;
 // create all the stars
 for (let i = 0; i < numStars; i++) {
   let star = document.createElement('div');
@@ -13,14 +14,14 @@ for (let i = 0; i < numStars; i++) {
 
   // give each star a random position
   let x = Math.random() * GRIDWIDTH;
-  let y = Math.random() * GRIDWIDTH;
+  let y = Math.random() * GRIDHEIGHT;
   // give each star a random speed
-  let dx = Math.random() * 3 + 1;
+  let dx = Math.random() * 4 + 1;
   if (Math.random () < 0.5) {
     dx = -dx;
   }
 
-  let dy = Math.random() * 3 + 1;
+  let dy = Math.random() * 4 + 1;
   if (Math.random () < 0.5) {
     dy = -dy;
   }
@@ -72,8 +73,8 @@ function animate() {
     if (starObj.y <= 0) {
       starObj.y = 0
       starObj.dy = starObj.dy * -1;
-    } else if (starObj.y >= GRIDWIDTH - STARWIDTH) {
-      starObj.y = GRIDWIDTH - STARWIDTH;
+    } else if (starObj.y >= GRIDHEIGHT - STARWIDTH) {
+      starObj.y = GRIDHEIGHT - STARWIDTH;
       starObj.dy = starObj.dy * -1;
     }
 

@@ -34,12 +34,15 @@ body {
 
 .star-grid {
   background-color: rgb(23, 84, 134);
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 1000px;
   display: flex;
   justify-content: center;
   margin: 0px auto;
   position: relative;
+  background-image: url('night_background.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 .star {
@@ -47,6 +50,7 @@ body {
   height: 30px;
   background: white;
   position: absolute;
+  cursor: pointer;
 }
 
 .star.clicked {

@@ -7,4 +7,4 @@ information about me.
 * Javascript 
   * Use of basic javascript to make the stars move inside of the grid
   * As stars are clicked by the user a 'stars-clicked-counter' is also changed
-
+* Night sky background from pexels: https://www.pexels.com/photo/silhouette-of-trees-under-starry-night-1361215/
