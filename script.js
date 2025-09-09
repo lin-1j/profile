@@ -10,6 +10,7 @@ const GRIDHEIGHT = 400;
 // create all the stars
 for (let i = 0; i < numStars; i++) {
   let star = document.createElement('div');
+  star.textContent = "⚝";
   star.classList.add('star');
 
   // give each star a random position
@@ -38,7 +39,8 @@ for (let i = 0; i < numStars; i++) {
   // class and increment the counter variable
   star.onclick = () => {
     if (!star.classList.contains('clicked')) {
-      star.classList.add('clicked');
+      // star.classList.add('clicked');
+      star.textContent = "🌠";
       curStarsClicked++;
     }
   };
@@ -50,7 +52,7 @@ const coursesTaken = document.querySelector('.courses-taken');
 const interests = document.querySelector('.interests');
 const funFacts = document.querySelector('.fun-facts');
 
-const STARWIDTH = 30;
+const STARWIDTH = 40;
 function animate() {
   // update the positions for each star
   for (let i = 0; i < numStars; i++) {

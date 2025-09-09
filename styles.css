@@ -46,16 +46,18 @@ body {
 }
 
 .star {
-  width: 30px;
-  height: 30px;
-  background: white;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
   position: absolute;
   cursor: pointer;
+  /* background-image: url('unclicked_star.png');
+  background-size: contain; */
 }
 
-.star.clicked {
-  background: yellow;
-}
+/* .star.clicked {
+  background-image: url('clicked_star.png');
+} */
 
 .stars-clicked-counter {
   display: flex;
