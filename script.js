@@ -87,7 +87,7 @@ clickAll.onclick = () => {
   // show about me sections
   basicInfo.textContent = "Basic info: Hi I'm Jack and I'm a second year student " +
     "studying compsci + commerce at UNSW! I'm from Auckland, NZ"
-  coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2521 comp2511 comp3311 comp2041 comp3511"
+  coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2041 comp2511 comp2521 comp3311 comp3511"
   interests.textContent = "My interests: I like playing badminton and going to the gym. I also like " +
     "attending various societies at UNSW like ACYA and culture cafe"
   funFacts.textContent = "Fun fact: I have a glass of milk every breakfast, lunch, and dinner 🥛"
@@ -134,7 +134,7 @@ function animate() {
     basicInfo.textContent = "Basic info: Hi I'm Jack and I'm a second year student " +
     "studying compsci + commerce at UNSW! I'm from Auckland, NZ"
   } else if (curStarsClicked == 4) {
-    coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2521 comp2511 comp3311 comp2041 comp3511"
+    coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2041 comp2511 comp2521 comp3311 comp3511"
   } else if (curStarsClicked == 6) {
     interests.textContent = "My interests: I like playing badminton and going to the gym. I also like " +
     "attending various societies at UNSW like ACYA and culture cafe"
