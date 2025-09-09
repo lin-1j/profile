@@ -9,7 +9,6 @@ body {
   margin: 0px;
   padding: 0px;
   background: #1f2937;
-  /* background: #1c1b31; */
   color: white;
   text-align: center;
   color:rgb(246, 250, 255);
@@ -22,24 +21,20 @@ body {
   background: #0a1122;
 }
 
-.instructions {
-  padding: 30px 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+h1 {
+  font-size: 1.8em;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  padding: 40px 150px;
+  gap: 30px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
 .content > div {
-  font-size: 1.5em;
-}
-
-.stars-clicked-counter {
   font-size: 1.5em;
 }
 
@@ -61,21 +56,24 @@ body {
   font-size: 40px;
   position: absolute;
   cursor: pointer;
-  /* background-image: url('unclicked_star.png');
-  background-size: contain; */
 }
-
-/* .star.clicked {
-  background-image: url('clicked_star.png');
-} */
 
 .star-grid-items {
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 10px auto 40px;
   gap: 198px;
+}
+
+.stars-clicked-counter {
+  font-size: 1.5em;
+}
+
+.reset-clicked-stars:hover, 
+.click-all-stars:hover {
+  background: #ecc232;
 }
 
 .star-grid-items > div {

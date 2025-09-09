@@ -1,7 +1,6 @@
 # Dreams theme inspired about me website
 This website is an about me page that includes a dreams theme where the user 
-needs to click moving shooting stars inside of a grid in order to unlock
-information about me.
+needs to click moving shooting stars inside of a grid to unlock information.
 
 ## Features
 * Javascript 

@@ -17,12 +17,12 @@ for (let i = 0; i < numStars; i++) {
   let x = Math.random() * GRIDWIDTH;
   let y = Math.random() * GRIDHEIGHT;
   // give each star a random speed
-  let dx = Math.random() * 8 + 1;
+  let dx = Math.random() * 7 + 1;
   if (Math.random () < 0.5) {
     dx = -dx;
   }
 
-  let dy = Math.random() * 8 + 1;
+  let dy = Math.random() * 7 + 1;
   if (Math.random () < 0.5) {
     dy = -dy;
   }
@@ -53,7 +53,7 @@ const clickAll = document.querySelector('.click-all-stars');
 const basicInfo = document.querySelector('.basic-info');
 const coursesTaken = document.querySelector('.courses-taken');
 const interests = document.querySelector('.interests');
-const funFacts = document.querySelector('.fun-facts');
+const funFacts = document.querySelector('.fun-fact');
 const dreams = document.querySelector('.dreams');
 
 resetClicked.onclick = () => {
@@ -68,28 +68,30 @@ resetClicked.onclick = () => {
 
   // reset the about me sections
   basicInfo.textContent = "Basic info: 2 to unlock!"
-  coursesTaken.textContent = "Courses taken: 4 to unlock!"
+  coursesTaken.textContent = "Comp courses taken: 4 to unlock!"
   interests.textContent = "My interests: 6 to unlock!"
-  funFacts.textContent = "Fun facts: 8 to unlock!"
-  dreams.textContent = "My dreams: 10 to unlock!"
+  funFacts.textContent = "Fun fact: 8 to unlock!"
+  dreams.textContent = "My current dream: 10 to unlock!"
 };
 
 clickAll.onclick = () => {
   curStarsClicked = 10;
   clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
 
-  // add clicked state from all stars
+  // add clicked state to all stars
   starsInfo.forEach(starObj => {
     starObj.star.classList.add('clicked');
     starObj.star.textContent = "🌠";
   })
 
   // show about me sections
-  basicInfo.textContent = "Basic info: "
-  coursesTaken.textContent = "Courses taken: "
-  interests.textContent = "My interests: "
-  funFacts.textContent = "Fun facts: "
-  dreams.textContent = "My dreams: "
+  basicInfo.textContent = "Basic info: Hi I'm Jack and I'm a second year student " +
+    "studying compsci + commerce at UNSW! I'm from Auckland, NZ"
+  coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2521 comp2511 comp3311 comp2041 comp3511"
+  interests.textContent = "My interests: I like playing badminton and going to the gym. I also like " +
+    "attending various societies at UNSW like ACYA and culture cafe"
+  funFacts.textContent = "Fun fact: I have a glass of milk every breakfast, lunch, and dinner 🥛"
+  dreams.textContent = "My current dream: to not be unemployed after graduating 😹"
 }
 
 const STARWIDTH = 40;
@@ -129,15 +131,17 @@ function animate() {
   clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
 
   if (curStarsClicked == 2) {
-    basicInfo.textContent = "Basic info: Hi my name is Jack"
+    basicInfo.textContent = "Basic info: Hi I'm Jack and I'm a second year student " +
+    "studying compsci + commerce at UNSW! I'm from Auckland, NZ"
   } else if (curStarsClicked == 4) {
-    coursesTaken.textContent = "Review of taken courses: COMP1511 COMP1531"
+    coursesTaken.textContent = "Comp courses taken: comp1511 comp1521 comp1531 comp2521 comp2511 comp3311 comp2041 comp3511"
   } else if (curStarsClicked == 6) {
-    interests.textContent = "My interests: Badminton"
+    interests.textContent = "My interests: I like playing badminton and going to the gym. I also like " +
+    "attending various societies at UNSW like ACYA and culture cafe"
   } else if (curStarsClicked == 8) {
-    funFacts.textContent = "Fun facts: Random fact"
+    funFacts.textContent = "Fun fact: I have a glass of milk every breakfast, lunch, and dinner 🥛"
   } else if (curStarsClicked == 10) {
-    dreams.textContent = "My dreams: dream"
+    dreams.textContent = "My current dream: to not be unemployed after graduating 😹"
   }
 
   requestAnimationFrame(animate);
