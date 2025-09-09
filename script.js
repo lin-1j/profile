@@ -17,12 +17,12 @@ for (let i = 0; i < numStars; i++) {
   let x = Math.random() * GRIDWIDTH;
   let y = Math.random() * GRIDHEIGHT;
   // give each star a random speed
-  let dx = Math.random() * 4 + 1;
+  let dx = Math.random() * 8 + 1;
   if (Math.random () < 0.5) {
     dx = -dx;
   }
 
-  let dy = Math.random() * 4 + 1;
+  let dy = Math.random() * 8 + 1;
   if (Math.random () < 0.5) {
     dy = -dy;
   }
@@ -39,18 +39,58 @@ for (let i = 0; i < numStars; i++) {
   // class and increment the counter variable
   star.onclick = () => {
     if (!star.classList.contains('clicked')) {
-      // star.classList.add('clicked');
+      star.classList.add('clicked');
       star.textContent = "🌠";
       curStarsClicked++;
     }
   };
 }
 
+const resetClicked = document.querySelector('.reset-clicked-stars');
 const clickedCounter = document.querySelector('.stars-clicked-counter');
+const clickAll = document.querySelector('.click-all-stars');
+
 const basicInfo = document.querySelector('.basic-info');
 const coursesTaken = document.querySelector('.courses-taken');
 const interests = document.querySelector('.interests');
 const funFacts = document.querySelector('.fun-facts');
+const dreams = document.querySelector('.dreams');
+
+resetClicked.onclick = () => {
+  curStarsClicked = 0;
+  clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
+
+  // remove clicked state from all stars
+  starsInfo.forEach(starObj => {
+    starObj.star.classList.remove('clicked');
+    starObj.star.textContent = "⚝";
+  })
+
+  // reset the about me sections
+  basicInfo.textContent = "Basic info: 2 to unlock!"
+  coursesTaken.textContent = "Courses taken: 4 to unlock!"
+  interests.textContent = "My interests: 6 to unlock!"
+  funFacts.textContent = "Fun facts: 8 to unlock!"
+  dreams.textContent = "My dreams: 10 to unlock!"
+};
+
+clickAll.onclick = () => {
+  curStarsClicked = 10;
+  clickedCounter.textContent = "Stars clicked: " + curStarsClicked;
+
+  // add clicked state from all stars
+  starsInfo.forEach(starObj => {
+    starObj.star.classList.add('clicked');
+    starObj.star.textContent = "🌠";
+  })
+
+  // show about me sections
+  basicInfo.textContent = "Basic info: "
+  coursesTaken.textContent = "Courses taken: "
+  interests.textContent = "My interests: "
+  funFacts.textContent = "Fun facts: "
+  dreams.textContent = "My dreams: "
+}
 
 const STARWIDTH = 40;
 function animate() {
@@ -96,6 +136,8 @@ function animate() {
     interests.textContent = "My interests: Badminton"
   } else if (curStarsClicked == 8) {
     funFacts.textContent = "Fun facts: Random fact"
+  } else if (curStarsClicked == 10) {
+    dreams.textContent = "My dreams: dream"
   }
 
   requestAnimationFrame(animate);
